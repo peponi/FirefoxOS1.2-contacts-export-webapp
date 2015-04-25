@@ -1,24 +1,23 @@
 {
   "version": "0.1.0",
-  "name": "contact_export_for_FFOS1.2",
-  "description": "A template with the bare minimum structure",
+  "name": "Contact Export",
+  "description": "a webapp to ex- & import you contacts (needs a CouchDB)",
   "launch_path": "/index.html",
   "icons": {
-    "16": "/img/icons/icon16x16.png",
-    "48": "/img/icons/icon48x48.png",
-    "60": "/img/icons/icon60x60.png",
-    "128": "/img/icons/icon128x128.png"
+    "48": "/img/icons/export_icon_1_48x48.png",
+    "60": "/img/icons/export_icon_1_60x60.png",
+    "128": "/img/icons/export_icon_1_128x128.png"
   },
   "developer": {
-    "name": "Your name",
-    "url": "http://example.com"
+    "name": "peponi",
+    "url": "http://pod.geraspora.de/u/peponi"
   },
   "type": "privileged",
   "permissions": 
   {
     "contacts": {
       "access": "readonly",
-      "description": "Required to read all contacts for export"
+      "description": "Required to read all contacts for ex- & import"
     },
     "systemXHR": {
       "description": "Required to send contacts to CouchDB you defined"
@@ -28,10 +27,17 @@
     "*"
   ],
   "locales": {
-    "es": {
-      "name": "Aplicación vacía privilegiada",
-      "description": "Una plantilla con la mínima estructura",
-      "permissions": {}
+    "de": {
+      "name": "Kontakt Export",
+      "description": "Eine WebApp zum ex- und importieren deiner Kontakte mittels CouchDB",
+      "permissions": {
+        "contacts": {
+          "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden"
+        },
+        "systemXHR": {
+          "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden"
+        }
+      }
     }
   },
   "default_locale": "en"
