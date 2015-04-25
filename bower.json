@@ -1,0 +1,25 @@
+{
+  "name": "FirefoxOS1.2-contacts-export-webapp",
+  "version": "0.1.0",
+  "homepage": "https://github.com/peponi/FirefoxOS1.2-contacts-export-webapp",
+  "description": "a webapp to ex- & import you contacts (needs a CouchDB)",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "FirefoxOS",
+    "contacts"
+  ],
+  "authors": [
+    "Peponi"
+  ],
+  "license": "GPL2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
