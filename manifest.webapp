@@ -2,11 +2,11 @@
   "version": "0.1.0",
   "name": "Contact Export",
   "description": "a webapp to ex- & import you contacts (needs a CouchDB)",
-  "launch_path": "/index.html",
+  "launch_path": "/app/index.html",
   "icons": {
-    "48": "/img/icons/export_icon_1_48x48.png",
-    "60": "/img/icons/export_icon_1_60x60.png",
-    "128": "/img/icons/export_icon_1_128x128.png"
+    "48": "/app/img/icons/export_icon_1_48x48.png",
+    "60": "/app/img/icons/export_icon_1_60x60.png",
+    "128": "/app/img/icons/export_icon_1_128x128.png"
   },
   "developer": {
     "name": "peponi",

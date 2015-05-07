@@ -6,15 +6,19 @@
         <meta name="description" content="A webapp app to ex- & import contacts">
 
         <meta name="viewport" content="width=device-width">
+        <link href='http://fonts.googleapis.com/css?family=Play|Montserrat|Jura|Orbitron:400,500|Indie+Flower' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/app.css">
 
     </head>
     <body>
         <section>
-            <label for="ip">CouchDb IP address</label>
+            <p id="app-description">Enter IP address of your CouchDB an sync your contacts</p>
+            <br>
+            <label for="ip">CouchDB IP address</label>
+            <br>
             <input type="text" id="ip" placeholder="127.0.0.1:5984" pattern="\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b.\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b.\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b.\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b\:\d+">
-            <p data-l10n-id="app_description">This app is empty. Fill it with your own stuff!</p>
-            <button id="export">export</button>
+            <br><br>
+            <button id="export">sync</button>
         </section>
     </body>
     <script type="text/javascript" src="bower_components/es6-promise/promise.min.js" defer></script>

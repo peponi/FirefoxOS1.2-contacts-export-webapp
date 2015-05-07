@@ -1,0 +1,36 @@
+{
+  "name": "FirefoxOS1.2-contacts-export-webapp",
+  "version": "0.0.1",
+  "description": "an WebApp to ex- and import all contacts",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-server-livereload": "^1.3.0"
+  },
+  "scripts": {
+    "test": "gulp webserver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peponi/FirefoxOS1.2-contacts-export-webapp.git"
+  },
+  "keywords": [
+    "FirefoxOS",
+    "1.2",
+    "FOS1.2",
+    "WebApp",
+    "Contacts",
+    "Export",
+    "Import",
+    "PouchDB"
+  ],
+  "author": "Peponi",
+  "license": "GPL2",
+  "bugs": {
+    "url": "https://github.com/peponi/FirefoxOS1.2-contacts-export-webapp/issues"
+  },
+  "homepage": "https://github.com/peponi/FirefoxOS1.2-contacts-export-webapp"
+}
