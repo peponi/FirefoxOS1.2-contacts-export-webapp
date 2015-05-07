@@ -32,7 +32,8 @@
       "description": "Eine WebApp zum ex- und importieren deiner Kontakte mittels CouchDB",
       "permissions": {
         "contacts": {
-          "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden"
+          "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden",
+          "access": "readcreate"
         },
         "systemXHR": {
           "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden"

@@ -6,10 +6,9 @@
 ### Acceptance criteria:
 
 * contacts can be read from FirefoxOS
-  * v1.0
-  * v1.1
-  * v1.2
-  * v1.3
+  * v1.1 ✔
+  * v1.2 ✔
+  * v1.3 ✔
 * contacts can be send to CouchDB
 * contacts can be fetch from CouchDB
 * contacts can be import in FirefoxOS

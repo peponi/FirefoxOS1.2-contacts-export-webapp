@@ -1,11 +1,11 @@
 'use strict';
 
-// add globaly for debugging on FF console
 var d = document;
 
 if(window.navigator.mozContacts)
 {
 
+  // add global for debugging on FF console
   var accountsArr = [],
       ipField     = d.getElementById("ip"),
       ip;
@@ -32,7 +32,7 @@ if(window.navigator.mozContacts)
         this.continue();
 
       } else {
-        console.log(count + ' contacts found.');
+        d.getElementById('contacts-count').innerHTML = count + ' contacts found';
       }
     };
 
@@ -51,7 +51,14 @@ if(window.navigator.mozContacts)
     
     d.getElementById("export").addEventListener('click',function()
     {
-      console.log(accountsArr,ip);
+      fetch( ip+'/moz_contacts', {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(accountsArr[0])
+      })
     });
   });
 }
