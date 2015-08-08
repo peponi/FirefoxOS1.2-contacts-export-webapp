@@ -9,9 +9,12 @@
   * v1.1 ✔
   * v1.2 ✔
   * v1.3 ✔
-* contacts can be send to CouchDB
+* contacts can be send to CouchDB ✔
+  * check if contact already exist on CouchDB - by comparing phone or email or name
+  * if contact already exist or has been synced update synced contactlist with blue '✔' or red '⨯'
 * contacts can be fetch from CouchDB
 * contacts can be import in FirefoxOS
+  * check if contact already exist on FirefoxOS - by comparing phone or email or name
   * v1.2
   * v1.3
  

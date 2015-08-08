@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>INSTALL</title>
+</head>
+<body>
+	<!-- <input type="button" onclick="window.navigator.mozApps.install('http://multimedia/webapp_test/manifest.webapp')" value="App install"> -->
+	<form id="install">
+	        <button style="height:150px; width:150px; font-size:34px;">Install</button>        
+	</form>
+
+	<script>
+	var url = "http://192.168.0.4:8000/manifest.webapp";
+
+	function install(){
+	        var request = window.navigator.mozApps.install(url);
+
+	        request.onsuccess = function () {
+				// Save the App object that is returned
+				var appRecord = this.result;
+				alert('Installation successful!');
+			};
+			request.onerror = function () {
+				// Display the error information from the DOMError object
+				alert('Install failed, error: ' + this.error.name);
+			};
+	}
+	document.getElementById("install").onsubmit = install;
+	</script>
+	
+</body>
+</html>
