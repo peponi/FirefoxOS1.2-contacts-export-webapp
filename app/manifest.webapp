@@ -13,10 +13,9 @@
     "url": "http://pod.geraspora.de/u/peponi"
   },
   "type": "privileged",
-  "permissions": 
-  {
+  "permissions": {
     "contacts": {
-      "access": "readonly",
+      "access": "readcreate",
       "description": "Required to read all contacts for ex- & import"
     },
     "systemXHR": {

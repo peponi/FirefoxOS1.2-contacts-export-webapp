@@ -55,6 +55,12 @@ li {
 	padding-left: 3px;
 }
 
+li.synced:before {
+	content: '✓';
+	position: absolute;
+	right: 25px;
+}
+
 .blink {
 	text-decoration: blink;
 }

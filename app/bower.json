@@ -9,7 +9,14 @@
   ],
   "keywords": [
     "FirefoxOS",
-    "contacts"
+    "1.2",
+    "FOS1.2",
+    "WebApp",
+    "Contacts",
+    "Export",
+    "Import",
+    "PouchDB",
+    "CouchDB"
   ],
   "authors": [
     "Peponi"
@@ -23,7 +30,6 @@
     "tests"
   ],
   "dependencies": {
-    "fetch": "~0.8.1",
-    "es6-promise": "~2.1.0"
+    "pouchdb": "^5.3.1"
   }
 }
