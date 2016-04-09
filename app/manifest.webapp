@@ -3,10 +3,11 @@
   "name": "Contact Export",
   "description": "a webapp to ex- & import you contacts (needs a CouchDB)",
   "launch_path": "/index.html",
+  "size": "42kb",
   "icons": {
-    "48": "/img/icons/export_icon_1_48x48.png",
-    "60": "/img/icons/export_icon_1_60x60.png",
-    "128": "/img/icons/export_icon_1_128x128.png"
+    "48": "img/icons/export_icon_1_48x48.png",
+    "60": "img/icons/export_icon_1_60x60.png",
+    "128": "img/icons/export_icon_1_128x128.png"
   },
   "developer": {
     "name": "peponi",
@@ -22,24 +23,7 @@
       "description": "Required to send contacts to CouchDB you defined"
     }
   },
-  "installs_allowed_from": [
-    "*"
-  ],
-  "default_locale": "de",
-  "locales": {
-    "de": {
-      "name": "Kontakt Export",
-      "description": "Eine WebApp zum ex- und importieren deiner Kontakte mittels CouchDB",
-      "permissions": {
-        "contacts": {
-          "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden",
-          "access": "readcreate"
-        },
-        "systemXHR": {
-          "description": "Benötigt um alle Kontakte auszulesen und zur CouchDB zu senden"
-        }
-      }
-    }
-  },
+  "installs_allowed_from": ["*"],
+  "orientation": ["portrait"],
   "default_locale": "en"
 }

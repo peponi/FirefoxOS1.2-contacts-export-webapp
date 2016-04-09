@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="manifest.appcache">
     <head>
         <meta charset="utf-8">
         <title>Privileged app</title>
@@ -12,17 +12,28 @@
     </head>
     <body>
         <section>
-            <p id="app-description">Enter custom URL of your CouchDB if needed</p>
-            <br>
-            <label for="url">CouchDB address</label>
-            <br>
-            <input type="url" id="url" placeholder="http://localhost:5984/ffos_contacts">
+            <div id="form">
+                <p id="app-description">Enter custom URL of your CouchDB if needed</p>
+                <label for="url">CouchDB address</label>
+                <br>
+                <input type="url" id="url" placeholder="http://localhost:5984/ffos_contacts">
+                <br><br>
+                <button id="sync-btn">connect to database</button>
+            </div>
+            <div id="sync-status"></div>
             <br><br>
-            <button id="sync-btn">sync</button>
-            <br><br>
+            <div class="table">
+                <div class="table-cell">
+                    <button class="btn" id="show-local-contact-list-btn">show local contact list</button>
+                </div>
+                <div class="table-cell">
+                    <button class="btn" id="show-remote-contact-list-btn">show remote contact list</button>
+                </div>
+            </div>
             <p><var id="contact-count"></var> contacts found</p>
-            <ul id="contact-list">
-            </ul>
+            <ul id="local-contact-list"></ul>
+            <ul id="remote-contact-list"></ul>
+            <br><br>
         </section>
     </body>
     <script src="bower_components/pouchdb/dist/pouchdb.min.js"></script>

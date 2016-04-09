@@ -1,6 +1,6 @@
 # User story
 
-**as a  FFOS1.2 user** i want to export all my contacts  
+**as a  FFOS1.1 user** i want to export all my contacts  
 **so thant** I can upgrade my operating system and import all contacts to the new OS
 
 ### Acceptance criteria:
@@ -12,11 +12,9 @@
 * contacts can be send to CouchDB ✔
   * check if contact already exist on CouchDB - by comparing phone or email or name
   * if contact already exist or has been synced update synced contactlist with blue '✔' or red '⨯'
-* contacts can be fetch from CouchDB
-* contacts can be import in FirefoxOS
-  * check if contact already exist on FirefoxOS - by comparing phone or email or name
-  * v1.2
-  * v1.3
+* contacts can be fetch from CouchDB ✔
+* contacts can be import in FirefoxOS ✔
+  * check if contact already exist on FirefoxOS - by comparing phone or email or name ✔
 
 ### FirefoxOS API
 

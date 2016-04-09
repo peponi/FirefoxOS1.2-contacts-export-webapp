@@ -22,12 +22,11 @@ input {
 }
 
 button {
-	background: #707070;
-	color: #fff;
-	border: 0;
+	background: rgba(0,0,0,.0);
+	color: #01b1e4;
+	border: 1px solid #01b1e4;
 	width: 100%;
 	padding: 10px;
-	text-transform: uppercase;
 	width: 100%;
 	border-radius: 0;
 }
@@ -58,10 +57,50 @@ li {
 li.synced:before {
 	content: '✓';
 	position: absolute;
+	margin-top: -2px;
 	right: 25px;
+}
+
+#local-contact-list li.notsynced:before {
+	content: '△';
+	position: absolute;
+	margin-top: -10px;
+	right: 25px;
+	font-size: 30px;
+}
+
+#remote-contact-list li.notsynced:before {
+	content: '▽';
+	position: absolute;
+	margin-top: -10px;
+	right: 25px;
+	font-size: 30px;
 }
 
 .blink {
 	text-decoration: blink;
 }
 
+.table {
+	display: table;
+}
+
+.table-cell {
+	display: table-cell;
+}
+
+.table-cell:first-child {
+	padding-right: 5px;
+}
+
+.table-cell:last-child {
+	padding-left: 5px;
+}
+
+.btn {
+	width: 100%;
+}
+
+.error {
+	color: #707070;
+}
