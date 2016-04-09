@@ -7,8 +7,24 @@ var d           = document,
     contactList = d.getElementById('contact-list'),
     li          = d.createElement('LI'),
     dbName      = 'ffos_contacts',
-    url         = 'http://10.0.0.4:5984/ffos_contacts',
-    db          = new PouchDB(dbName);
+    url         = 'http://172.31.184.93:5984/ffos_contacts',
+    db          = new PouchDB(dbName),
+    payload     = w.location.protocol === "app:" ? { mozSystem: true, mozAnon: true } : { mozSystem: false, mozAnon: false };
+
+
+    console.log('payload:', payload);
+var appXHR = function () {
+
+
+    return new XMLHttpRequest(payload);
+}
+
+var opts = {
+    ajax: {
+        xhr: appXHR,
+        headers: { cookie: 'no' }
+    }
+};
 
 // check if this app has been executed on firefox os
 // else show error text in ui
@@ -96,7 +112,7 @@ if(w.navigator.mozContacts) {
         syncBtn.addEventListener('click', function() {
             console.log('click sync btn');
 
-            var remoteDB = new PouchDB(url);
+            var remoteDB = new PouchDB(url, opts);
 
             console.log('create remote db');
 

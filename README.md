@@ -40,8 +40,21 @@
 
 ## CouchDB setup (if you want to sync your data to your [CouchDB](https://couchdb.apache.org))
 
-you need to enable [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-
-[github.com/pouchdb/add-cors-to-couchdb](https://github.com/pouchdb/add-cors-to-couchdb#what-it-does)
+you need to enable [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to sync data fromt your phone to the DB
 
 *CouchDB doesn't come with CORS enabled by default. This is a problem for libraries like PouchDB, which depend on being able to access CouchDB ...*
+
+just do the following in your terminal
+
+```
+HOST=http://adminname:password@couchdb_ip_address:5984 # or whatever you got
+
+curl -X PUT $HOST/_config/httpd/bind_address -d '"0.0.0.0"'
+curl -X PUT $HOST/_config/httpd/enable_cors -d '"true"'
+curl -X PUT $HOST/_config/cors/origins -d '"*"'
+curl -X PUT $HOST/_config/cors/credentials -d '"true"'
+curl -X PUT $HOST/_config/cors/methods -d '"GET, PUT, POST, HEAD, DELETE"'
+curl -X PUT $HOST/_config/cors/headers -d '"accept, authorization, content-type, origin, referer, x-csrf-token"'
+```
+
+via: [github.com/pouchdb/add-cors-to-couchdb](https://github.com/pouchdb/add-cors-to-couchdb#what-it-does)
