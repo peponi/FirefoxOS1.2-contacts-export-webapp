@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="manifest.appcache">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Privileged app</title>
@@ -14,21 +14,19 @@
         <section>
             <div id="form">
                 <p id="app-description">Enter custom URL of your CouchDB if needed</p>
-                <label for="url">CouchDB address</label>
+                <label for="url">CouchDB <span id="sync-status">address</span></label>
                 <br>
                 <input type="url" id="url" placeholder="http://localhost:5984/ffos_contacts">
                 <br><br>
-                <button id="sync-btn">connect to database</button>
+                <button id="sync-btn">sync with CouchDB</button>
             </div>
-            <div id="sync-status"></div>
             <br><br>
-            <div class="table">
-                <div class="table-cell">
-                    <button class="btn" id="show-local-contact-list-btn">show local contact list</button>
-                </div>
-                <div class="table-cell">
-                    <button class="btn" id="show-remote-contact-list-btn">show remote contact list</button>
-                </div>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="onoffswitch-cbx" checked>
+                <label class="onoffswitch-label" for="onoffswitch-cbx">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
             </div>
             <p><var id="contact-count"></var> contacts found</p>
             <ul id="local-contact-list"></ul>

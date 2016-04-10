@@ -10,8 +10,7 @@ var ContactsSyncApp = function() {
         syncBtn                     = d.getElementById('sync-btn'),
         localContactListNode        = d.getElementById('local-contact-list'),
         remoteContactListNode       = d.getElementById('remote-contact-list'),
-        showLocalContactListBtn     = d.getElementById('show-local-contact-list-btn'),
-        showRemoteContactListBtn    = d.getElementById('show-remote-contact-list-btn'),
+        onOffSwitchCbx              = d.getElementById('onoffswitch-cbx'),
         contactCount                = d.getElementById('contact-count'),
         li                          = d.createElement('LI'),
 
@@ -20,6 +19,7 @@ var ContactsSyncApp = function() {
         db      = new PouchDB(dbName),
         payload = w.location.protocol === "app:" ? { mozSystem: true, mozAnon: true } : { mozSystem: false, mozAnon: false },
 
+        state               = {isCurrentVisibleListLocal: true},
         allLocalContacts    = [],
         allPouchDBContacts  = [];
 
@@ -261,23 +261,15 @@ var ContactsSyncApp = function() {
         // https://pouchdb.com/guides/replication.html
         db.sync(remoteDB).on('complete', function () {
             console.log('sync to CouchDB complete');
-            d.getElementById('form').style.display = 'none';
-            syncStatusNode.innerHTML = 'CouchDB: synchronized';
+            syncStatusNode.innerHTML = ': connected';
             syncStatusNode.className = '';
         }).on('error', function (err) {
-            d.getElementById('form').style.display = 'block';
-            syncStatusNode.innerHTML = 'CouchDB: synchronize error';
+            syncStatusNode.innerHTML = ': connection error';
             syncStatusNode.className = 'error';
         });
     };
 
     // ============= VIEW ACTIONS =================
-    
-    self.showForm = function() {
-    };
-
-    self.hideForm = function() {
-    };
 
     // ============= EVENT LISTENER =================
     
@@ -319,22 +311,25 @@ var ContactsSyncApp = function() {
             self.initializeDBSync();
         };
 
-        showLocalContactListBtn.onclick = function() {
-            localContactListNode.style.display = 'block';
-            remoteContactListNode.style.display = 'none';
-            contactCount.innerHTML = allLocalContacts.length;
+        onOffSwitchCbx.onclick = function() {
 
-            self.drawContactList(allLocalContacts, localContactListNode, allPouchDBContacts);
+            if(state.isCurrentVisibleListLocal) {
+                localContactListNode.style.display = 'block';
+                remoteContactListNode.style.display = 'none';
+                contactCount.innerHTML = allLocalContacts.length;
+
+                self.drawContactList(allLocalContacts, localContactListNode, allPouchDBContacts);
+            } else {
+                localContactListNode.style.display = 'none';
+                remoteContactListNode.style.display = 'block';
+                contactCount.innerHTML = allPouchDBContacts.length;
+
+                self.drawContactList(allPouchDBContacts, remoteContactListNode, allLocalContacts);
+            }
+
             self.getAllPouchDBContacts();
-        };
-
-        showRemoteContactListBtn.onclick = function() {
-            localContactListNode.style.display = 'none';
-            remoteContactListNode.style.display = 'block';
-            contactCount.innerHTML = allPouchDBContacts.length;
-
-            self.drawContactList(allPouchDBContacts, remoteContactListNode, allLocalContacts);
-            self.getAllLocalContacts();
+            self.getAllLocalContacts();               
+            state.isCurrentVisibleListLocal = !state.isCurrentVisibleListLocal;
         };
     };
 
