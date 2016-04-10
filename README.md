@@ -1,27 +1,8 @@
-# User story
+## What's that
 
-**as a  FFOS1.1 user** i want to export all my contacts  
-**so thant** I can upgrade my operating system and import all contacts to the new OS
+This is a [WebApp](https://developer.mozilla.org/en-US/Apps/Fundamentals/Quickstart/Build/Intro_to_open_web_apps) in a [Tron_Legacy](https://en.wikipedia.org/wiki/Tron:_Legacy) style for the [FirefoxOS](https://en.wikipedia.org/wiki/Firefox_OS) operating system, to synchronize contacts with a remote [CouchDB](http://couchdb.apache.org).
 
 ![Screen Shot](screenshot.png)
-
-### Acceptance criteria:
-
-* contacts can be read from FirefoxOS
-  * v1.1 ✔
-  * v1.2 ✔
-  * v1.3 ✔
-* contacts can be send to CouchDB ✔
-  * check if contact already exist on CouchDB - by comparing phone or email or name
-  * if contact already exist or has been synced update synced contactlist with blue '✔' or red '⨯'
-* contacts can be fetch from CouchDB ✔
-* contacts can be import in FirefoxOS ✔
-  * check if contact already exist on FirefoxOS - by comparing phone or email or name ✔
-
-### FirefoxOS API
-
-* https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/API/Contacts_API
-* https://developer.mozilla.org/en-US/Apps/Fundamentals/gather_and_modify_data/Updating_phone_contacts_from_the_web
  
 ### Firmware upgrade links:
 
@@ -58,3 +39,26 @@ curl -X PUT $HOST/_config/cors/headers -d '"accept, authorization, content-type,
 ```
 
 via: [github.com/pouchdb/add-cors-to-couchdb](https://github.com/pouchdb/add-cors-to-couchdb#what-it-does)
+
+# User story
+
+**as a  FFOS1.1 user** I want to export all my contacts  
+**so thant** I can upgrade my operating system and import all contacts to the new OS
+
+### Acceptance criteria:
+
+* contacts can be read from FirefoxOS
+  * v1.1 ✔
+  * v1.2 ✔
+  * v1.3 ✔
+* contacts can be send to CouchDB ✔
+  * check if contact already exist on CouchDB - by comparing phone or email or name
+  * if contact already exist or has been synced update synced contactlist with blue '✔' or red '⨯'
+* contacts can be fetch from CouchDB ✔
+* contacts can be import in FirefoxOS ✔
+  * check if contact already exist on FirefoxOS - by comparing phone or email or name ✔
+
+### FirefoxOS API
+
+* https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/API/Contacts_API
+* https://developer.mozilla.org/en-US/Apps/Fundamentals/gather_and_modify_data/Updating_phone_contacts_from_the_web
