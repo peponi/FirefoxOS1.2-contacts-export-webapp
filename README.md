@@ -3,6 +3,8 @@
 **as a  FFOS1.1 user** i want to export all my contacts  
 **so thant** I can upgrade my operating system and import all contacts to the new OS
 
+![Screen Shot](screenshot.png)
+
 ### Acceptance criteria:
 
 * contacts can be read from FirefoxOS
