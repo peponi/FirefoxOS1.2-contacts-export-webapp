@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 ## What's that
 
 This is a [WebApp](https://developer.mozilla.org/en-US/Apps/Fundamentals/Quickstart/Build/Intro_to_open_web_apps) in a [Tron_Legacy](https://en.wikipedia.org/wiki/Tron:_Legacy) style for the [FirefoxOS](https://en.wikipedia.org/wiki/Firefox_OS) operating system, to synchronize contacts with a remote [CouchDB](http://couchdb.apache.org).
